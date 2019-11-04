@@ -1,2 +1,2 @@
-# dotfiles
-Various Configuration Files
+# Configuration Files
+TODO: documentation and automated setup
