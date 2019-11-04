@@ -39,12 +39,6 @@ let g:python3_host_prog = '/home/sirphd/miniconda3/envs/neovim/bin/python'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors " Get color in terminal
 
-" resize panels with arrows
-nnoremap <Up>    :resize +2<CR>
-nnoremap <Down>  :resize -2<CR>
-nnoremap <Left>  :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
-
 set encoding=utf-8
 set colorcolumn=80,120 " Show column limits
 set lazyredraw
@@ -71,11 +65,25 @@ set spelllang=en_us
 
 " prevent gopass from creating temp files on hard drive
 au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY BINDINGS                                                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" resize panels with arrows
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
+let maplocalleader=";"
+let mapleader=","
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILETYPE CONFIGURATIONS                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " correct highlighting of comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd FileType rmarkdown :UltiSnipsAddFiletypes r.rmarkdown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIGURATIONS                                                  "
@@ -99,6 +107,8 @@ colorscheme gruvbox
 """"""""""""""""""
 " SirVer/ultisnips 
 """"""""""""""""""
+let g:UltiSnipsSnippetsDir='~/code/UltiSnips/'
+let g:UltiSnipsSnippetDirectories=["~/code/UltiSnips/", "UltiSnips"]
 " Trigger configuration. Do not use <tab> if you use YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F2>"
 let g:UltiSnipsJumpForwardTrigger="<F3>"
@@ -152,9 +162,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1] =~# '\s'
 endfunction
-
-" use <cr> to confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
