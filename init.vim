@@ -28,11 +28,12 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
 
-let g:python3_host_prog = '/home/sirphd/miniconda3/envs/neovim/bin/python'
+let g:python3_host_prog = '/usr/bin/python'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GENERAL CONFIGURATIONS                                                 "
@@ -84,6 +85,8 @@ let mapleader=","
 " correct highlighting of comments in json files
 autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType rmarkdown :UltiSnipsAddFiletypes r.rmarkdown
+let g:tex_flavor = "latex"
+" autocmd FileType plaintex set ft=latex
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN CONFIGURATIONS                                                  "
@@ -107,8 +110,6 @@ colorscheme gruvbox
 """"""""""""""""""
 " SirVer/ultisnips 
 """"""""""""""""""
-let g:UltiSnipsSnippetsDir='~/code/UltiSnips/'
-let g:UltiSnipsSnippetDirectories=["~/code/UltiSnips/", "UltiSnips"]
 " Trigger configuration. Do not use <tab> if you use YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F2>"
 let g:UltiSnipsJumpForwardTrigger="<F3>"
@@ -131,7 +132,7 @@ let g:lightline = {
 let g:coc_global_extensions = [
   \'coc-prettier', 'coc-python',
   \'coc-css', 'coc-json', 'coc-r-lsp',
-  \'coc-html'
+  \'coc-html', 'coc-texlab'
   \]
 
 " if hidden is not set TextEdit might fail
