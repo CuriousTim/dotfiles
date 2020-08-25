@@ -1,0 +1,39 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Hack;
+    font-size: 14px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background: transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 5px;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: rgba(100, 114, 125, 0.2);
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    border-bottom: 3px solid #03A306;
+    padding: 0 5px 0 5px;
+    margin: 0 0 0 5px;
+    background-color: rgba(125, 70, 15, 0.3);
+}
+
+#battery, #memory, #cpu, #pulseaudio, #bluetooth, #network {
+    border-bottom: 3px solid #03A306;
+    padding: 0 5px;
+    margin: 0 5px;
+    background-color: rgba(125, 70, 15, 0.3);
+
+}
