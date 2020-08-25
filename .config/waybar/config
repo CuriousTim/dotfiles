@@ -6,7 +6,11 @@
     //"height": ,
     //"output": "all",
     "position": "top",
-    "modules-left": ["sway/workspaces", "idle_inhibitor"],
+    "modules-left": ["sway/workspaces", "sway/mode", "idle_inhibitor"],
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 50,
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {

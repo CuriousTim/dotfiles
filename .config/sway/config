@@ -51,6 +51,7 @@ bindsym XF86AudioNext exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86AudioPrev exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86AudioPlay exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob )
 
+default_border pixel 2
 ### Key bindings
 #
 # Basics:
