@@ -9,3 +9,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Abbreviations
 iabbrev hw Hello World
+
+" Disable viminfo
+set viminfo=
