@@ -1,9 +1,6 @@
 {
     // Display bar in front of windows
-    "layer": "bottom",
-    // leave height and width blank for dyanmic values
-    //"width": ,
-    //"height": ,
+    "layer": "top",
     //"output": "all",
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/mode", "idle_inhibitor"],

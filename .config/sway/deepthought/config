@@ -1,0 +1,4 @@
+output 'Ancor Communications Inc ASUS VS228 EALMQS024930' pos 0 0 res 1920x1080
+output 'Ancor Communications Inc VX229 D7LMRS016587' pos 1920 0 res 1920x1080
+
+focus output 'Ancor Communications Inc VX229 D7LMRS016587'
